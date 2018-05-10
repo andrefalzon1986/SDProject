@@ -57,7 +57,7 @@ require_once("menu.php"); ?>
                 
                 if ($count >0){
                     $_SESSION['uname'] = $uname;
-                    header("Location: index.php");
+                    header("Location: home.php");
                     
                 }else {
                     echo "<h1>You are not logged in </h1>";

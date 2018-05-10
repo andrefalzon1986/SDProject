@@ -98,23 +98,26 @@
                 
                 $conn = connectToMySQL();
 
-                $query1 = "INSERT INTO account (Username, Password) VALUES ('$uname', '$password')";
-                 
-                            
-               
-                
-                 
-                
+                $query1 = "INSERT INTO customer_account (Username, Password) VALUES ('$uname', '$password')";
 
                 $result1 = mysqli_query($conn, $query1);
-               $test = mysqli_insert_id($conn);
-                echo $test;
+                
+                $test = mysqli_insert_id($conn);
+                
                 $query2 =  "INSERT INTO customer (Name, Surname, Email, Mobile, CityId, AccountId)
                 VALUES ('$name', '$surname', '$email', '$mobile', '$city','$test')";
+                
                 $result2 = mysqli_query($conn, $query2)
                 or die("Error in query: ". mysqli_error($conn));
+                
+                $message = "Registered Successfully";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+                
+                
+
             }else{ 
                 echo "Please fill all fields";
+
             }
         }
 
