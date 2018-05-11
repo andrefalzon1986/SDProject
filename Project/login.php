@@ -47,7 +47,7 @@ require_once("menu.php"); ?>
                 
                 $conn = connectToMySQL();
                 
-                $query = "SELECT COUNT(*) FROM account WHERE Username = '$uname' AND Password = '$password' ";
+                $query = "SELECT COUNT(*) FROM customer_account WHERE Username = '$uname' AND Password = '$password' ";
                 
                 $result = mysqli_query ($conn, $query)
                     or die ("Error in query: ".mysqli_error($connection));
